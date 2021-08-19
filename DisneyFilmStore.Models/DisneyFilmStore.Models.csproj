@@ -40,5 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="CustomerModels\CustomerCreate.cs" />
+    <Compile Include="CustomerModels\CustomerEdit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+=======
+>>>>>>> 22d006e37786afd9e5f5cf302a7f9ab8f018cb46
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

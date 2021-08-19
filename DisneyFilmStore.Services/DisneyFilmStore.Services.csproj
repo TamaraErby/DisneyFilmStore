@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="CustomerService.cs" />
+=======
     <Compile Include="OrderService.cs" />
+>>>>>>> 22d006e37786afd9e5f5cf302a7f9ab8f018cb46
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
