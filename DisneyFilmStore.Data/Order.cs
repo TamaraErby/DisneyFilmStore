@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DisneyFilmStore.Data
 {
-    public class Class1
+    public class Order
     {
     }
 }
