@@ -5,26 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DisneyFilmStore.Data
+namespace DisneyFilmStore.Models.CustomerModels
 {
-    public class Customer
+    public class CustomerDetail
     {
-        [Key]
         public int Id { get; set; }
 
-        [Required]
-        public string FirstName { get; set; }
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
 
-        [Required]
-        public string LastName { get; set; }
-
-        [Required, DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required]
         public string Address { get; set; }
 
         public bool Member { get; set; } = false;
+        
+        public ICollection<OrderListItem> Orders { get; set; }
 
+        // favorite movies?
+
+        // most recent movies?
     }
 }
