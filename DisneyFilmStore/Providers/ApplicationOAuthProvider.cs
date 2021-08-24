@@ -10,6 +10,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using DisneyFilmStore.Models;
+using DisneyFilmStore.Data;
 
 namespace DisneyFilmStore.Providers
 {
