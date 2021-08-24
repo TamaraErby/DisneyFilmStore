@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using DisneyFilmStore.Models;
 using DisneyFilmStore.Providers;
 using DisneyFilmStore.Results;
+using DisneyFilmStore.Data;
 
 namespace DisneyFilmStore.Controllers
 {
