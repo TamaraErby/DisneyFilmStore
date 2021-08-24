@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DisneyFilmStore.Models.OrderModels
 {
-    class OrderEdit
+    public class OrderEdit
     {
     }
 }
