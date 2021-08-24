@@ -19,7 +19,9 @@ namespace DisneyFilmStore.Data
         [Required]
         public double TotalOrderCost { get; set; }
 
-        [Required, ForeignKey(nameof(CustomerId))]
+        [Required, ForeignKey(nameof(Customer))]
         public int CustomerId { get; set; }
+
+        public virtual Customer Customer { get; set; }
     }
 }
