@@ -10,18 +10,24 @@ namespace DisneyFilmStore.Models.CustomerModels
 {
     public class CustomerDetail
     {
+        [Required]
         public int Id { get; set; }
 
+        [Required]
         [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
+        [Required]
         public string Email { get; set; }
-
+        
+        [Required]
         public string Address { get; set; }
 
+        [Required]
         public bool Member { get; set; } = false;
-        
-        public ICollection<OrderListItem> Orders { get; set; }
+
+        [Required]
+        public IEnumerable<OrderListItem> Orders { get; set; }
 
         // favorite movies?
 
