@@ -30,6 +30,7 @@ namespace DisneyFilmStore.Data
         {
             return new ApplicationDbContext();
         }
+
     }
 }
 

@@ -61,6 +61,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DisneyFilmStore.Data\DisneyFilmStore.Data.csproj">
+      <Project>{EFBBC11C-D1BA-45D5-8806-A8AD55D14F58}</Project>
+      <Name>DisneyFilmStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DisneyFilmStore.Models\DisneyFilmStore.Models.csproj">
+      <Project>{C99DFB89-0DAA-46B8-BDB4-3D5A4FD781E2}</Project>
+      <Name>DisneyFilmStore.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
