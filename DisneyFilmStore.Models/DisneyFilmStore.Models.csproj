@@ -61,6 +61,10 @@
     <Compile Include="CustomerModels\CustomerDetail.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerListItem.cs" />
+    <Compile Include="FilmModels\FilmCreate.cs" />
+    <Compile Include="FilmModels\FilmDetail.cs" />
+    <Compile Include="FilmModels\FilmEdit.cs" />
+    <Compile Include="FilmModels\FilmListItem.cs" />
     <Compile Include="OrderModels\OrderCreate.cs" />
     <Compile Include="OrderModels\OrderDetail.cs" />
     <Compile Include="OrderModels\OrderEdit.cs" />
