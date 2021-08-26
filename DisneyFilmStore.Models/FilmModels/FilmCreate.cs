@@ -5,15 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DisneyFilmStore.Models.CustomerModels
+namespace DisneyFilmStore.Models.FilmModels
 {
-    public class CustomerListItem
+    public class FilmCreate
     {
         [Required]
-        public int Id { get; set; }
-
+        public int FilmId { get; set; }
         [Required]
-        public string FullName { get; set; }
+        public string Title { get; set; }
 
     }
 }
