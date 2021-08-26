@@ -64,7 +64,7 @@ namespace DisneyFilmStore.Services
                 var entity =
                     ctx
                         .Films
-                        .Single(e => e.PostId == id && e.AuthorId == _userId);
+                        .Single(e => e.FilmId == id && e.AuthorId == _userId);
 
                 var films = filmService.GetFilmsByFilmId(entity.FilmId);
 
@@ -92,7 +92,7 @@ namespace DisneyFilmStore.Services
                 var entity =
                     ctx
                         .Films
-                        .Single(e => e.PostId == model.FilmId && e.AuthorId == _userId);
+                        .Single(e => e.FilmId == model.FilmId && e.AuthorId == _userId);
 
                 entity.Title = model.Title;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
@@ -101,14 +101,14 @@ namespace DisneyFilmStore.Services
             }
         }
 
-        public bool DeletePost(int postId)
+        public bool DeleteFilm(int filmId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Films
-                        .Single(e => e.PostId == postId && e.AuthorId == _userId);
+                        .Single(e => e.FilmId == filmId && e.AuthorId == _userId);
 
                 ctx.Films.Remove(entity);
 
