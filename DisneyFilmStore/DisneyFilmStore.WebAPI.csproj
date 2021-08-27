@@ -382,6 +382,14 @@
       <Project>{EFBBC11C-D1BA-45D5-8806-A8AD55D14F58}</Project>
       <Name>DisneyFilmStore.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DisneyFilmStore.Models\DisneyFilmStore.Models.csproj">
+      <Project>{C99DFB89-0DAA-46B8-BDB4-3D5A4FD781E2}</Project>
+      <Name>DisneyFilmStore.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DisneyFilmStore.Services\DisneyFilmStore.Services.csproj">
+      <Project>{1FA519AD-3D1A-4B6D-B209-F2568367A7C5}</Project>
+      <Name>DisneyFilmStore.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

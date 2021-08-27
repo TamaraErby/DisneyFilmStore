@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
-
+using System.Data.Entity;
 
 namespace DisneyFilmStore.Data
 {
@@ -30,6 +30,10 @@ namespace DisneyFilmStore.Data
         {
             return new ApplicationDbContext();
         }
+
+
+        public DbSet<Film> Films { get; set; }
+
 
     }
 }
