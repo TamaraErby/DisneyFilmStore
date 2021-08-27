@@ -31,7 +31,10 @@ namespace DisneyFilmStore.Data
             return new ApplicationDbContext();
         }
 
+
         public DbSet<Film> Films { get; set; }
+
+
     }
 }
 
