@@ -33,6 +33,7 @@ namespace DisneyFilmStore.Data
 
 
         public DbSet<Film> Films { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
 
     }
