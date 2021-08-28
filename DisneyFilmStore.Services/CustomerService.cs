@@ -2,6 +2,7 @@
 using DisneyFilmStore.Models.CustomerModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace DisneyFilmStore.Services
         }
 
         // CREATE / POST
-        public bool CreateCustomer(CustomerCreate model)
+        public async Task<bool> CreateCustomerAsync(CustomerCreate model)
         {
             var entity = new Customer
             {
@@ -33,12 +34,12 @@ namespace DisneyFilmStore.Services
             using (var context = new ApplicationDbContext())
             {
                 context.Customers.Add(entity);
-                return context.SaveChanges() == 1;
+                return await context.SaveChangesAsync() == 1;
             }
         }
 
         // GET ALL / READ
-        public IEnumerable<CustomerListItem> GetAllCustomers()
+        public async Task<IEnumerable<CustomerListItem>> GetAllCustomersAsync()
         {
             using (var context = new ApplicationDbContext())
             {
@@ -52,7 +53,7 @@ namespace DisneyFilmStore.Services
                         }
                     );
 
-                return query.ToArray();
+                return await query.ToArrayAsync();
             }
         }
 
@@ -81,7 +82,7 @@ namespace DisneyFilmStore.Services
         }
 
         // PUT BY ID / UPDATE
-        public bool UpdateCustomerById(int id, CustomerEdit model)
+        public async Task<bool> UpdateCustomerByIdAsync(int id, CustomerEdit model)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -90,31 +91,27 @@ namespace DisneyFilmStore.Services
                     .Single(c => c.UserId == _userId && c.Id == id);
 
                 if (model.FirstName != null)
-                {
                     entity.FirstName = model.FirstName;  
-                }
+
                 else if (model.LastName != null)
-                {
                     entity.LastName = model.LastName;
-                }
+
                 else if (model.Email != null)
-                {
                     entity.Email = model.Email;
-                }
+
                 else if (model.Address != null)
-                {
                     entity.Address = model.Address;
-                }
+
                 entity.Member = model.Member;
                 // this is problematic because if they don't change member status,
                 // the bool will be false and Member status will automatically be set to false
 
-                return context.SaveChanges() == 1;
-            };
+                return await context.SaveChangesAsync() == 1;
+            }
         }
 
         // DELETE
-        public bool DeleteCustomerById(int id)
+        public async Task<bool> DeleteCustomerByIdAsync(int id)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -123,7 +120,7 @@ namespace DisneyFilmStore.Services
                     .Single(c => c.UserId == _userId && c.Id == id);
 
                 context.Customers.Remove(entity);
-                return context.SaveChanges() == 1;
+                return await context.SaveChangesAsync() == 1;
             };
         }
         

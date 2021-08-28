@@ -11,14 +11,14 @@ namespace DisneyFilmStore.Models.CustomerModels
     {
         [Required]
         [Display(Name = "First Name")]
-        [MinLength(1, ErrorMessage = "Name cannot be empty.")]
-        [MaxLength(200, ErrorMessage = "Name is too long.")]
+        [MinLength(1, ErrorMessage = "First name cannot be empty.")]
+        [MaxLength(200, ErrorMessage = "First name is too long.")]
         public string FirstName { get; set; }
 
         [Required]
         [Display(Name = "Last Name")]
-        [MinLength(1, ErrorMessage = "Name cannot be empty.")]
-        [MaxLength(200, ErrorMessage = "Name is too long.")]
+        [MinLength(1, ErrorMessage = "Last name cannot be empty.")]
+        [MaxLength(200, ErrorMessage = "Last name is too long.")]
         public string LastName { get; set; }
 
         [Required]

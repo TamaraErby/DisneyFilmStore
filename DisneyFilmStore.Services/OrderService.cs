@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DisneyFilmStore.Services
 {
-    class OrderService
+    public class OrderService
     {
         private readonly Guid _userId;
 
