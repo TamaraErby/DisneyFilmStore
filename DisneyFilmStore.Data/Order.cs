@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Build.Framework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -20,7 +21,7 @@ namespace DisneyFilmStore.Data
         public double TotalOrderCost { get; set; }
 
         [Required, ForeignKey(nameof(Customer))]
-        public int CustomerId { get; set; }
+        public Guid CustomerId { get; set; }
 
         public virtual Customer Customer { get; set; }
     }

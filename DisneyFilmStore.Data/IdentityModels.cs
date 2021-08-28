@@ -70,6 +70,7 @@ namespace DisneyFilmStore.Data
 =======
 
         public DbSet<Film> Films { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
 
 >>>>>>> abb9132bcf8f27b9b3a56fde6d061dee6eef97ab

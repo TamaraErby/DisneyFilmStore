@@ -17,9 +17,8 @@ namespace DisneyFilmStore.Models.OrderModels
         [Required]
         public double TotalOrderCost { get; set; }
 
-        [Required, ForeignKey(nameof(Customer))]
-        public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
+        [Required]
+        public Guid CustomerId { get; set; }
 
     }
 }
