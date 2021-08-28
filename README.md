@@ -18,11 +18,13 @@
 -----------------------------------------------------------------------------------
 ### Dean is using this section for notes 
  - Entities:
+   - need a OrderCreater property on orders to keep them private, probably same with shipping info?
 
  - Models:
+   
 
  - Services:
-
+   - need some kind of error handling for editing a customer if they don't include data
  - Controllers:
  
  - Possible Stretch Goals:
