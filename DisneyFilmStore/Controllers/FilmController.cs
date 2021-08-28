@@ -20,7 +20,7 @@ namespace DisneyFilmStore.Controllers
             var films = filmService.GetFilms();
             return Ok(films);
         }
-        public IHttpActionResult Film(FilmCreate film)
+        public IHttpActionResult Post(FilmCreate film)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
