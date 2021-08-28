@@ -25,6 +25,11 @@ namespace DisneyFilmStore.Services
                     FilmId = model.FilmId,
                     OwnerId = _userId,
                     Title = model.Title,
+                    Rating = model.Rating,
+                    Genre = model.Genre,
+                    YearReleased = model.YearReleased,
+                    MemberCost = model.MemberCost,
+                    NonMemberCost = model.NonMemberCost,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -89,6 +94,11 @@ namespace DisneyFilmStore.Services
                         .Single(e => e.FilmId == model.FilmId && e.OwnerId == _userId);
 
                 entity.Title = model.Title;
+                entity.Rating = model.Rating;
+                entity.Genre = model.Genre;
+                entity.YearReleased = model.YearReleased;
+                entity.MemberCost = model.MemberCost;
+                entity.NonMemberCost = model.NonMemberCost;
 
                 return ctx.SaveChanges() == 1;
             }
