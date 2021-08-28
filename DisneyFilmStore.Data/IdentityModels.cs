@@ -3,13 +3,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
-<<<<<<< HEAD
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-=======
-using System.Data.Entity;
->>>>>>> abb9132bcf8f27b9b3a56fde6d061dee6eef97ab
 
 namespace DisneyFilmStore.Data
 {
@@ -37,6 +33,8 @@ namespace DisneyFilmStore.Data
             return new ApplicationDbContext();
         }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Film> Films { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -52,7 +50,6 @@ namespace DisneyFilmStore.Data
 
     }
 
-<<<<<<< HEAD
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {
         public IdentityUserLoginConfiguration()
@@ -67,13 +64,9 @@ namespace DisneyFilmStore.Data
         {
             HasKey(iur => iur.UserId);
         }
-=======
-
-        public DbSet<Film> Films { get; set; }
-        public DbSet<Order> Orders { get; set; }
 
 
->>>>>>> abb9132bcf8f27b9b3a56fde6d061dee6eef97ab
+
     }
 }
 
