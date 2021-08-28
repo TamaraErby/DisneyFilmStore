@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DisneyFilmStore.Services
 {
-    class FilmService
+    public class FilmService
     {
         private readonly Guid _userId;
 
@@ -23,7 +23,7 @@ namespace DisneyFilmStore.Services
                 new Film()
                 {
                     FilmId = model.FilmId,
-                    AuthorId = _userId,
+                    OwnerId = _userId,
                     Title = model.Title,
                 };
 
@@ -41,14 +41,13 @@ namespace DisneyFilmStore.Services
                 var query =
                     ctx
                         .Films
-                        .Where(e => e.AuthorId == _userId)
+                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new FilmListItem
                                 {
                                     FilmId = e.FilmId,
                                     Title = e.Title,
-                                    CreatedUtc = e.CreatedUtc
                                 }
 
                         );
@@ -64,21 +63,16 @@ namespace DisneyFilmStore.Services
                 var entity =
                     ctx
                         .Films
-                        .Single(e => e.FilmId == id && e.AuthorId == _userId);
-
-                var films = filmService.GetFilmsByFilmId(entity.FilmId);
+                        .Single(e => e.FilmId == id && e.OwnerId == _userId);
 
                 return
                     new FilmDetail
                     {
-                        FilmId = entity.FilmId,
-                        AuthorId = entity.AuthorId,
-                        Title = entity.Title,
+                        Rating = entity.Rating,
                         Genre = entity.Genre,
+                        YearReleased = entity.YearReleased,
                         MemberCost = entity.MemberCost,
                         NonMemberCost = entity.NonMemberCost,
-                        CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
 
                     };
             }
@@ -92,10 +86,9 @@ namespace DisneyFilmStore.Services
                 var entity =
                     ctx
                         .Films
-                        .Single(e => e.FilmId == model.FilmId && e.AuthorId == _userId);
+                        .Single(e => e.FilmId == model.FilmId && e.OwnerId == _userId);
 
                 entity.Title = model.Title;
-                entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -108,7 +101,7 @@ namespace DisneyFilmStore.Services
                 var entity =
                     ctx
                         .Films
-                        .Single(e => e.FilmId == filmId && e.AuthorId == _userId);
+                        .Single(e => e.FilmId == filmId && e.OwnerId == _userId);
 
                 ctx.Films.Remove(entity);
 
