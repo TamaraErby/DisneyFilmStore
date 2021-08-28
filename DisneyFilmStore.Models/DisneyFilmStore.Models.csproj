@@ -66,6 +66,10 @@
     <Compile Include="OrderModels\OrderDetail.cs" />
     <Compile Include="OrderModels\OrderEdit.cs" />
     <Compile Include="OrderModels\OrderListItem.cs" />
+    <Compile Include="ShippingModels\ShippingCreate.cs" />
+    <Compile Include="ShippingModels\ShippingDetail.cs" />
+    <Compile Include="ShippingModels\ShippingEdit.cs" />
+    <Compile Include="ShippingModels\ShippingListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
